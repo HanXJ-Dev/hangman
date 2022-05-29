@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Stack, useBreakpointValue, Center } from "@chakra-ui/react";
-import "animate.css"
+import "animate.css";
 
 const style = {
   color: "#69C9D0",
@@ -23,8 +23,14 @@ export default function Keyboard(props) {
     return [...KEYS.slice(rowIndex[0], rowIndex[1])].map((letter, idx) => {
       return (
         <Button
-          isDisabled={started === "" || end ? true : false || guessed.includes(letter)}
-          colorScheme={guessed.includes(letter) || started === "" || end ? "blackAlpha": "gray"}
+          isDisabled={
+            started === "" || end ? true : false || guessed.includes(letter)
+          }
+          colorScheme={
+            guessed.includes(letter) || started === "" || end
+              ? "blackAlpha"
+              : "gray"
+          }
           name={letter}
           key={idx}
           shadow="md"

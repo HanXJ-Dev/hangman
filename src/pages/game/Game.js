@@ -4,7 +4,7 @@ import Hangman from "../../components/hangman";
 import Keyboard from "../../components/keyboard";
 import { Button, Stack, Heading, Center } from "@chakra-ui/react";
 import { WORDS, randomWord } from "../../Words";
-import "animate.css"
+import "animate.css";
 
 const LIVES = 6;
 
@@ -20,7 +20,7 @@ export default function Game() {
     let word = randomWord(topic);
     setWord(word);
     setTopic(topic);
-    setCorrectLetters(0)
+    setCorrectLetters(0);
   };
 
   const countOccurence = (letter) => {
@@ -28,7 +28,7 @@ export default function Game() {
     const count = word.match(re).length;
     return count;
   };
-  
+
   const selectLetter = (event) => {
     setGuessed([...guessed, event.target.name]);
 
@@ -38,11 +38,11 @@ export default function Game() {
   };
 
   useEffect(() => {
-    if (correctLetters === word.length) setGameState(1)
+    if (correctLetters === word.length) setGameState(1);
   }, [correctLetters]);
 
   useEffect(() => {
-    if (lives < 1) setGameState(2)
+    if (lives < 1) setGameState(2);
   }, [lives]);
 
   const generateGame = () => {
@@ -52,13 +52,22 @@ export default function Game() {
           <Heading pt={5}>{topic}</Heading>
         </Center>
         <Center mt={5}>
-          <Hangman lives={lives}/>
+          <Hangman lives={lives} />
         </Center>
         <Center letterSpacing={5}>
           {word.split("").map((letter, idx) => {
             return (
-              <Heading key={idx} className="animate__animated animate__bounceInLeft">
-                {guessed.indexOf(letter) > -1 ? <Heading className="animate__animated animate__flipInX">{letter}</Heading> : "_"}
+              <Heading
+                key={idx}
+                className="animate__animated animate__bounceInLeft"
+              >
+                {guessed.indexOf(letter) > -1 ? (
+                  <Heading className="animate__animated animate__flipInX">
+                    {letter}
+                  </Heading>
+                ) : (
+                  "_"
+                )}
               </Heading>
             );
           })}
@@ -99,14 +108,21 @@ export default function Game() {
         ""
       ) : (
         <EndGame
-          displayText= {gameState === 1? "You Win! :D": "You Lose :("}
-          restart={() => {window.location.reload()}}
+          displayText={gameState === 1 ? "You Win! :D" : "You Lose :("}
+          restart={() => {
+            window.location.reload();
+          }}
           word={word}
-          gameState={ gameState }
+          gameState={gameState}
         />
       )}
 
-      <Keyboard selectLetter={selectLetter} started={topic} guessed={guessed} end={gameState!==0} />
+      <Keyboard
+        selectLetter={selectLetter}
+        started={topic}
+        guessed={guessed}
+        end={gameState !== 0}
+      />
     </>
   );
 }

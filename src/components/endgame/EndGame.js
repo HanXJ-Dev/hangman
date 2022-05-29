@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react"
-import { Link } from "react-router-dom"
-import { Button, Stack, Heading, Text, Center } from "@chakra-ui/react"
-import Confetti from "react-confetti"
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button, Stack, Heading, Text, Center } from "@chakra-ui/react";
+import Confetti from "react-confetti";
 
 export default function EndGame(props) {
   const { displayText, restart, word, gameState } = props;

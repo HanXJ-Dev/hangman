@@ -1,12 +1,12 @@
-import React from "react"
-import "./index.css"
-import "animate.css"
+import React from "react";
+import "./index.css";
+import "animate.css";
 
 {
   /* Credits: SVG and CSS adapted from https://github.com/AkshatM/Hangman */
 }
 export default function Hangman(props) {
-  const { lives } = props
+  const { lives } = props;
   return (
     <>
       <div className="svg-container animate__animated animate__rotateInDownLeft">
@@ -20,8 +20,27 @@ export default function Hangman(props) {
           <rect fill="#053544" width="150" height="10" x="20" y="0" />
           <rect fill="#053544" width="200" height="10" x="0" y="400" />
           <line x1="140" y1="0" x2="140" y2="120" stroke="rgb(0,0,0)" />
-          {lives < 6 ? <circle className="animate__animated animate__bounceInDown" cx="140" cy="150" r="30" /> : ""}
-          {lives < 5 ? <rect width="10" height="100" x="135" y="150" className="animate__animated animate__bounceInUp" /> : ""}
+          {lives < 6 ? (
+            <circle
+              className="animate__animated animate__bounceInDown"
+              cx="140"
+              cy="150"
+              r="30"
+            />
+          ) : (
+            ""
+          )}
+          {lives < 5 ? (
+            <rect
+              width="10"
+              height="100"
+              x="135"
+              y="150"
+              className="animate__animated animate__bounceInUp"
+            />
+          ) : (
+            ""
+          )}
           {lives < 4 ? (
             <line
               x1="140"
