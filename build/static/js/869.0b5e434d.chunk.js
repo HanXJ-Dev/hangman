@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktiktok_hangman=self.webpackChunktiktok_hangman||[]).push([[869],{3869:function(n,e,t){t.r(e),t.d(e,{default:function(){return s}});t(2791);var r=t(3504),a=t(3998),c=t(1399),h=t(184);function s(){return(0,h.jsxs)(h.Fragment,{children:[(0,h.jsx)(a.M5,{mt:5,children:(0,h.jsx)(a.X6,{children:"Hangman!"})}),(0,h.jsx)(a.M5,{mt:5,children:(0,h.jsx)(r.rU,{to:"/game",children:(0,h.jsx)(c.zx,{colorScheme:"teal",shadow:"md",children:"Start game!"})})})]})}}}]);
+//# sourceMappingURL=869.0b5e434d.chunk.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.e9110e05.css","mappings":"AAAA,QAGE,QAAS,CAFT,cAAe,CACf,OAAQ,CAER,sCAAwC,CACxC,8BAEF","sources":["components/preloader/index.css"],"sourcesContent":[".loader {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  \n}"],"names":[],"sourceRoot":""}
